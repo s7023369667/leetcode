@@ -14,6 +14,5 @@ Hope you could enjoy coding on all the topics in Leetcode ,let us moving forewar
 
 If there are some thing wrong code ,feel free to email me....since you only know my email.
 
-Maybe I will practice 'C++' soon before I graduate from NTNU 
-                  
-...maybe...Hope I will have more time and energy to do it!!
+Maybe I will practice 'C++' soon before I graduate from NTNU...maybe.......
+                                                            ......Hope I will have more time and energy to do it!!
