@@ -30,6 +30,5 @@ class Solution:
  /
 6
 [1,3,5,6]
-8(cnt) = 2^3(deep)
 '''
 
