@@ -16,7 +16,9 @@ class Solution:
                 return res
             path += str(root.val)
             left = dfs(root.left, path, res)
+            #print(f"l:{left}")
             right = dfs(root.right, path, res)
+            #print(f"r:{right}")
             return left + right
 
         return dfs(root, '', 0)
