@@ -21,3 +21,19 @@ class Solution:
 
         return dfs(root, '', 0)
 
+'''
+Input :
+root = [4,9,0,5,1]
+         4
+        / \
+       9   0
+      /\
+     5  1
+     
+Run time : 
+left = 495
+right = 491
+left = 985
+right = 40
+->res = 1026
+'''
