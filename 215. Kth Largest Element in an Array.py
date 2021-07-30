@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         return self.quick_sort(nums, 0, len(nums) - 1)[-k]
@@ -46,3 +45,12 @@ class Solution:
 
 
 
+'''
+Middle-of-Three 方法
+
+(1) 令 middle = (front + end) //2
+
+(2) 比較 nums[front]、nums[middle] 與 nums[end] 這三筆資料，排出中間值。
+
+(3) 將此中間值再與 nums[end] 做交換，作為新的 pivot
+'''
