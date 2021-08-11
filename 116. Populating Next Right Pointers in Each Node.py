@@ -7,8 +7,6 @@ class Node:
         self.right = right
         self.next = next
 
-
-
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
         if not root:
