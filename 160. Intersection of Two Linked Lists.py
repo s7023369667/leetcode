@@ -7,6 +7,13 @@ class ListNode:
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
         def _help(pA, pB, flagA, flagB):
+            ##4 1 8 4 5|5 6 1 8 4 5
+            ##5 6 1 8 4 5|4 1 8 4 5
+            '''
+            每次都比pA和pB，因為是兩條不同的linked list
+            所以如果在比較時就算找到pA和pB都是1->8->4->5->None一樣的，但Nond 1的位置是不同的
+            所以會找到交集點是是Node 8
+            '''
             if not pA and not flagA:
                 flagA = True
                 pA = headB
