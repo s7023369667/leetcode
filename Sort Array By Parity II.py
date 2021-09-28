@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def sortArrayByParityII(self, nums: List[int]) -> List[int]:
         odd, even = [], []

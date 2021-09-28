@@ -3,12 +3,12 @@ from typing import List
 
 class Solution:
     def placeWordInCrossword(self, board: List[List[str]], word: str) -> bool:
-        def _help(sub_board,word):
-            for row in range(len(sub_board)):
-                for col in range(len(sub_board[row])):
-
-                    if sub_board[row][col] == " " :
-
+        # def _help(sub_board,word):
+        #     for row in range(len(sub_board)):
+        #         for col in range(len(sub_board[row])):
+        #
+        #             # if sub_board[row][col] == " " :
+        #
 
             return True
 
