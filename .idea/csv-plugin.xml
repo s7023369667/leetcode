@@ -31,6 +31,27 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/5871. Convert 1D Array Into 2D Array.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/5872. Number of Pairs of Strings With Concatenation Equal to Target.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/5873. Maximize the Confusion of an Exam.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/5881. Maximum Difference Between Increasing Elements.py">
           <value>
             <Attribute>
