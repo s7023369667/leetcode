@@ -15,7 +15,7 @@ void printNode(struct ListNode* head){
 }
 
 struct ListNode* bubble_sort(struct ListNode* head){
-    //TLE
+    //TLE: O(n^2)
     if (head == NULL){
         return head;
     }
@@ -44,7 +44,7 @@ struct ListNode* bubble_sort(struct ListNode* head){
 void FrontBackSplite(struct ListNode* source,struct ListNode** frontRef, struct ListNode** backRef){
     struct ListNode* slow = source;
     struct ListNode* fast = source -> next;
-    //find middle point 
+    //find middle point ,fast is 2 times faster than slow.
     while (fast != NULL){
         fast = fast -> next;
         if (fast != NULL){
@@ -84,9 +84,11 @@ void MergeSort(struct ListNode** headRef){
     if ((head == NULL) || (head->next == NULL)){
         return;
     }
+    //divide 
     FrontBackSplite(head, &a, &b);
     MergeSort(&a);
     MergeSort(&b);
+    //conqure
     *headRef = SortMerge(a, b) ;
 }
 
