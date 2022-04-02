@@ -14,7 +14,6 @@ bool isPalindrome(char *s, int *l, int *r){
 
 bool validPalindrome(char * s){
     int L = 0, R = strlen(s)-1;
-    int remove = 0;
     
     if (!isPalindrome(s, &L, &R)){
         //we could only delete at most once.
