@@ -22,9 +22,14 @@ int missingNumber(int* nums, int numsSize){
 int missingNumber(int* nums, int numsSize){
     int missing_num = numsSize;
     /* 7 ^ 0 = 7
-       7 ^ 7 = 0*/
+       7 ^ 7 = 0
+       "XOR" could be use as sum operator without any carry*/
     for (int i=0;i<numsSize;i++){
+        // printf("%d ", missing_num);
         missing_num = missing_num ^ (nums[i] ^ i);
+        // printf("%d ", (nums[i] ^ i));
+        // printf("%d\n", missing_num);
     }
+    
     return missing_num;
 }
