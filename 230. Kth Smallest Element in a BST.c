@@ -6,7 +6,7 @@
  *     struct TreeNode *right;
  * };
  */
-
+//first
 struct TreeNode* countNodes(struct TreeNode* root, int* cnt){
     if (!root){
         return NULL;
@@ -53,7 +53,7 @@ void inorder(struct TreeNode* root, int* idx, int k,struct TreeNode* res){
     return;
 }
 
-
+//second
 int kthSmallest(struct TreeNode* root, int k){
     int idx = 0;
     struct TreeNode* res = malloc(sizeof(struct TreeNode));
