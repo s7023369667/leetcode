@@ -7,32 +7,31 @@
  * };
  */
 
-void inorder(struct TreeNode* root, int* node, int* cnt){
-    if (!root){
-        return;
-    }
-    inorder(root->left, node, cnt);
-    node[(*cnt)++] = root->val;
-    inorder(root->right, node, cnt);
-}
 
 
 typedef struct {
     int *node;
     int index;
-    int cnt;
-    
+    int size;
 } BSTIterator;
+
+void inorder(struct TreeNode* root, int *node, int *size){
+    if (!root){
+        return;
+    }
+    inorder(root->left, node, size);
+    node[(*size)++] = root->val; 
+    inorder(root->right, node, size);
+}
 
 
 BSTIterator* bSTIteratorCreate(struct TreeNode* root) {
-    BSTIterator *tree = malloc(sizeof(BSTIterator));
-    tree->node = (int*)malloc(sizeof(int)*10000);
-    tree->index = -1;
-    tree->cnt = 0;
-    inorder(root, tree->node, &tree->cnt);
-    return tree;
-    
+    BSTIterator *obj = malloc(sizeof(BSTIterator));
+    obj->node = malloc(sizeof(int)*10000);
+    obj->index = -1;
+    obj->size = 0;
+    inorder(root, obj->node, &obj->size);
+    return obj;
 }
 
 int bSTIteratorNext(BSTIterator* obj) {
@@ -40,7 +39,7 @@ int bSTIteratorNext(BSTIterator* obj) {
 }
 
 bool bSTIteratorHasNext(BSTIterator* obj) {
-    return obj->index < obj->cnt-1;
+    return obj->index < obj->size-1;
 }
 
 void bSTIteratorFree(BSTIterator* obj) {
