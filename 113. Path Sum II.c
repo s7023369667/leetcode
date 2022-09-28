@@ -28,7 +28,7 @@ int preOrderSumPath(struct TreeNode* root, int targetSum, int** res, int* return
             (*returnColumnSizes)[*returnSize] = tmpCnt;
             (*returnSize)++;
         }
-        printf("tmpCnt = %d, tmpSum = %d\n", tmpCnt, tmpSum);
+        //printf("tmpCnt = %d, tmpSum = %d\n", tmpCnt, tmpSum);
         return;
     }
     preOrderSumPath(root->left, targetSum, res, returnSize, 
