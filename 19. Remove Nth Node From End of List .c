@@ -5,22 +5,21 @@
  *     struct ListNode *next;
  * };
  */
+
 struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
-    struct ListNode* visit = head;
-    int cnt = 0;
-    while (visit != NULL){
-        visit = visit->next;
-        cnt += 1;
+    int cnt = n;
+    struct ListNode* pScan = head;
+    while ((cnt--) > 0){
+        pScan = pScan->next; //tricky part
     }
-    int del = cnt - n;
-    if (del==0){
-        head = head -> next;
-    }else{
-        struct ListNode* v = head;
-        for (int i=1;i<del;i++){
-            v = v-> next;
-        }
-        v->next = v->next->next;
+    if (!pScan){
+        return head->next;
     }
+    struct ListNode* pDel = head; 
+    while (pScan->next){
+        pScan = pScan->next;
+        pDel = pDel->next;
+    }
+    pDel->next = pDel->next->next;
     return head;
 }
