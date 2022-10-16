@@ -18,7 +18,7 @@ public:
 };
 */
 
-class Solution {
+class Solution1 {
 public:
     void print_stack(stack<Node*> st){
         while (!st.empty()){
@@ -42,5 +42,25 @@ public:
             }
         }  
         return res;
+    }
+};
+
+class Solution2 {
+public:
+    void traversal(Node* root, vector<int>& res){
+        res.push_back(root->val);
+        for (Node* child : root->children){
+            traversal(child, res);
+        }
+        
+    }
+    vector<int> preorder(Node* root) {
+        if (root == nullptr){
+            return {};
+        }
+        vector<int> res;
+        traversal(root, res);
+        return res;
+
     }
 };
