@@ -2,26 +2,27 @@
  * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
- *     struct TreeNode *left;
- *     struct TreeNode *right;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-
-bool checkRules(struct TreeNode *root, long low, long high){
-    if (root==NULL){
-        return true;
+class Solution {
+public:
+    bool isValidBST(TreeNode* root) {
+        return checkBST(root, LONG_MIN, LONG_MAX);
     }
-    if (!(root->val > low && root->val < high)){
-        return false;
+    
+    bool checkBST(TreeNode* root, long lowVal, long highVal){
+        if (root == nullptr){
+            return true;
+        }
+        if (!(root->val > lowVal) || !(root->val < highVal)){
+            return false;
+        }
+        return checkBST(root->left, lowVal, root->val) && checkBST(root->right, root->val, highVal);
     }
-    //left-subtree in range [low, root->val], right-subtree in range [root->val, high]
-    return checkRules(root->left, low, root->val) && checkRules(root->right, root->val, high);
-}
-
-bool isValidBST(struct TreeNode* root){
-    if (root==NULL){
-        return true;
-    }
-    //left-subtree in range [INT_MIN, root->val], right-subtree in range [root->val, INT_MAX]
-    return checkRules(root->left, LONG_MIN, root->val) && checkRules(root->right, root->val, LONG_MAX);
-}
+    
+};
