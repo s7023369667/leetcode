@@ -45,7 +45,7 @@ public:
         for (string s:words){
             mp[s]++;
         }
-        ////Creat max-heap by priority queue.
+        ////Creat a min-heap by priority queue.
         priority_queue<pair<int, string>, vector<pair<int, string>>, cmpfunc2> hp;
         for (auto m:mp){
             hp.push({m.second, m.first});
