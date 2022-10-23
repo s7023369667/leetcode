@@ -11,13 +11,13 @@ public:
     string decodeString(string s) {
         stack<int> mulS;
         stack<string> stringS;
-        mulS.push(1);
-        stringS.push("");
+        mulS.push(1); //// topperString initialize multiply with 1
+        stringS.push(""); ////topperString initialize to ""
         int currMul = 0;
         for (char c:s){
-            if (isdigit(c)){ //100
+            if (isdigit(c)){ //deal with the couninous digits
                 currMul *= 10;
-                currMul += c-'0';
+                currMul += (c-'0');
             }else if (c=='['){
                 mulS.push(currMul);
                 stringS.push("");
